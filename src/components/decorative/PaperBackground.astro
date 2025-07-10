@@ -1,0 +1,18 @@
+---
+// Components
+import { Image } from "astro:assets";
+
+// Images
+import background from "@/assets/images/background.png";
+
+const { className } = Astro.props;
+---
+
+<div class={`fixed h-screen w-screen ${className} opacity-20`}>
+  <Image
+    src={background}
+    class={`object-cover h-full w-full`}
+    alt=""
+    loading="eager"
+  />
+</div>

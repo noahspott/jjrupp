@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "./input-reset.css";
+@import "./font-faces.css";
+@import "./text-components.css";
+
+@theme {
+  --breakpoint-xs: 28rem;
+
+  --font-heading: "Notable", "sans";
+  --font-body: "DM Sans", "sans";
+
+  --color-primary: #27130c;
+  --color-secondary: #e7dfb9;
+  --color-tertiary: #a56a41;
+}
+
+:focus {
+  outline-color: var(--color-tertiary);
+  outline-offset: 4px;
+}

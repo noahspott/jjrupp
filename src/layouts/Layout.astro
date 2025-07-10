@@ -1,22 +1,48 @@
+---
+// Styles
+import "./src/styles/global.css";
+
+// Components
+import { Seo, Favicon, FontPreloaders } from "@/components/common";
+import { Header } from "@/components/shared";
+import { PaperBackground } from "@/components/decorative";
+
+// Types
+import type { SeoMeta } from "@/data/seo";
+
+const { seo } = Astro.props as { seo: SeoMeta };
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <Seo {...seo} />
+    <Favicon />
+    <FontPreloaders />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+  <body class="bg-secondary text-primary font-body">
+    <Header className="relative z-50" />
+    <PaperBackground className="z-10" />
+    <div class="relative z-20">
+      <slot />
+    </div>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    min-width: 320px;
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+  }
 </style>

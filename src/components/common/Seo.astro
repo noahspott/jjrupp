@@ -1,0 +1,22 @@
+---
+// Consts
+import { URL } from "@/data/business";
+
+// Types
+import type { SeoMeta } from "@/data/seo";
+
+const {
+  title,
+  description,
+  url = URL,
+  image = "/images/open-graph.png",
+} = Astro.props as SeoMeta;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:url" content={url} />
+<meta name="twitter:card" content="summary_large_image" />
