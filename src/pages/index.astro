@@ -1,6 +1,7 @@
 ---
 // Components
 import Layout from "../layouts/Layout.astro";
+import { HeroSection } from "@/components/home";
 
 // Data
 import { seo } from "@/data/seo";
@@ -8,6 +9,6 @@ import { seo } from "@/data/seo";
 
 <Layout seo={seo.home}>
   <main>
-    <h1 class="font-heading">HOME</h1>
+    <HeroSection />
   </main>
 </Layout>

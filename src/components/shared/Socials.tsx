@@ -49,8 +49,10 @@ export default function Socials({ className }: { className?: string }) {
   return (
     <ul className={`flex gap-14 ${className}`}>
       {socials.map((social) => (
-        <li>
-          <a href={social.href}>{<social.Icon className="size-5" />}</a>
+        <li key={social.href}>
+          <a href={social.href} aria-label={social.ariaLabel}>
+            {<social.Icon className="size-5" />}
+          </a>
         </li>
       ))}
     </ul>

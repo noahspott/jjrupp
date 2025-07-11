@@ -1,0 +1,36 @@
+---
+const { className } = Astro.props as { className: string };
+---
+
+<section class={` ${className}`}>
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    poster=""
+    class="h-dvh max-h-[760px] w-full object-cover opacity-80"
+  >
+    <source
+      src="/video/hero/hero-10s-360.mp4"
+      type="video/mp4"
+      media="(max-width: 480px)"
+    />
+    <source
+      src="/video/hero/hero-10s-540"
+      type="video/mp4"
+      media="(max-width: 640px)"
+    />
+    <source
+      src="/video/hero/hero-10s-760.mp4"
+      type="video/mp4"
+      media="(max-width: 768px)"
+    />
+    <source
+      src="/video/hero/hero-10s-1352"
+      type="video/mp4"
+      media="(max-width: 1440px)"
+    />
+    <source src="/video/hero/hero-10s-1920.mp4" type="video/mp4" />
+  </video>
+</section>
