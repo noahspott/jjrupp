@@ -4,8 +4,8 @@ import "./src/styles/global.css";
 
 // Components
 import { Seo, Favicon, FontPreloaders, ThemeMeta } from "@/components/common";
-import { Header } from "@/components/shared";
 import { PaperBackground } from "@/components/decorative";
+import { Header } from "@/components/layout";
 
 // Types
 import type { SeoMeta } from "@/data/seo";
@@ -29,21 +29,18 @@ const { seo } = Astro.props as { seo: SeoMeta };
     <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body class="bg-secondary text-primary font-body">
-    <Header className="z-50 w-full" />
-    <PaperBackground className="fixed z-10 max-w-[1920px]" />
-    <div class="relative z-30">
-      <slot />
-    </div>
+    <PaperBackground className="fixed" />
+    <Header className="" />
+    <slot />
   </body>
 </html>
 
 <style>
   html,
   body {
-    margin: 0 auto;
-    min-width: 320px;
-    max-width: 1920px;
-    width: 100%;
     overscroll-behavior: none;
+    min-width: 320px;
+    width: 100%;
+    margin: 0 auto;
   }
 </style>

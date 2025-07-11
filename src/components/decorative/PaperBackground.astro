@@ -8,7 +8,7 @@ import background from "@/assets/images/background.png";
 const { className } = Astro.props;
 ---
 
-<div class={`h-dvh w-full ${className}`}>
+<div class={`h-dvh w-full -z-10 ${className}`}>
   <Image
     src={background}
     class={`object-cover h-full w-full opacity-20`}

@@ -1,0 +1,34 @@
+---
+const { className } = Astro.props as { className: string };
+---
+
+<video
+  autoplay
+  muted
+  loop
+  playsinline
+  poster=""
+  class={`opacity-80 ${className}`}
+>
+  <source
+    src="/video/hero/hero-10s-360.mp4"
+    type="video/mp4"
+    media="(max-width: 480px)"
+  />
+  <source
+    src="/video/hero/hero-10s-540.mp4"
+    type="video/mp4"
+    media="(max-width: 640px)"
+  />
+  <source
+    src="/video/hero/hero-10s-760.mp4"
+    type="video/mp4"
+    media="(max-width: 768px)"
+  />
+  <source
+    src="/video/hero/hero-10s-1352.mp4"
+    type="video/mp4"
+    media="(max-width: 1440px)"
+  />
+  <source src="/video/hero/hero-10s-1920.mp4" type="video/mp4" />
+</video>

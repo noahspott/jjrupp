@@ -1,0 +1,35 @@
+---
+// Components
+import { Image } from "astro:assets";
+import { Link } from "@/components/shared";
+
+// Images
+import releaseArt from "@/assets/images/release-art/world-go-round-art.jpg";
+
+const release = {
+  name: "World Go 'Round",
+  src: releaseArt,
+  alt: "World Go 'Round Album Art",
+};
+
+const { className } = Astro.props as { className: string };
+---
+
+<div
+  class={`p-4 bg-secondary ${className} -rotate-1 shadow-2xl h-fit w-fit m-4`}
+>
+  <div
+    class="border-primary flex flex-col items-center gap-8 border-2 p-8 text-center"
+  >
+    <h2 class="heading-2 font-heading">
+      {release.name}
+    </h2>
+    <Image
+      class="aspect-square w-[250px]"
+      src={release.src}
+      alt={release.alt}
+    />
+    <p class="font-heading heading-3">Available Now</p>
+    <Link>Listen Now</Link>
+  </div>
+</div>
