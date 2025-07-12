@@ -1,3 +1,6 @@
+// Lib
+import clsx from "clsx";
+
 // Components
 import {
   FaSpotify,
@@ -45,13 +48,42 @@ const socials = [
   },
 ];
 
-export default function Socials({ className }: { className?: string }) {
-  return (
-    <ul className={`flex gap-14 ${className}`}>
+export default function Socials({
+  className,
+  iconClassName,
+  hasBgCircles = false,
+}: {
+  className?: string;
+  iconClassName?: string;
+  hasBgCircles?: boolean;
+}) {
+  return hasBgCircles ? (
+    <ul className={clsx("flex gap-5", className)}>
+      {socials.map((social) => (
+        <li
+          key={social.href}
+          className="bg-secondary h-[50px] w-[50px] rounded-full sm:h-[75px] sm:w-[75px]"
+        >
+          <a
+            href={social.href}
+            aria-label={social.ariaLabel}
+            className="flex h-full w-full items-center justify-center"
+          >
+            {
+              <social.Icon
+                className={clsx("text-primary size-7", iconClassName)}
+              />
+            }
+          </a>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <ul className={clsx("flex gap-14", className)}>
       {socials.map((social) => (
         <li key={social.href}>
           <a href={social.href} aria-label={social.ariaLabel}>
-            {<social.Icon className="size-5" />}
+            {<social.Icon className={clsx("size-5", iconClassName)} />}
           </a>
         </li>
       ))}

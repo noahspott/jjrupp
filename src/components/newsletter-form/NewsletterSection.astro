@@ -1,0 +1,14 @@
+---
+// Components
+import NewsletterForm from "./NewsletterForm";
+
+const { className } = Astro.props as { className: string };
+---
+
+<div class="">
+  <p class="heading-3 mb-8">Join the JJ Rupp Newsletter</p>
+  <NewsletterForm className="w-full" client:load />
+  <p class="body-sm mt-4">
+    We respect your privacy. No spam, ever. Unsubscribe at any time.
+  </p>
+</div>

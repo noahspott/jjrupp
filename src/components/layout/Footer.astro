@@ -1,0 +1,40 @@
+---
+// Components
+import { Content, Socials } from "@/components/shared";
+import { Image } from "astro:assets";
+import NewsletterSection from "@/components/newsletter-form/NewsletterSection.astro";
+
+// Data
+import { links } from "@/data/links";
+
+// Images
+import logo from "@/assets/images/logos/jj-logo-secondary.png";
+
+const { className } = Astro.props as { className?: string };
+---
+
+<footer class={`bg-primary text-secondary py-16 ${className}`}>
+  <Content>
+    <div class="flex flex-col justify-between gap-16 md:flex-row">
+      <div class="flex flex-col gap-16">
+        <Image src={logo} alt="JJ Rupp Logo" width={175} />
+        <NewsletterSection />
+        <Socials hasBgCircles className="flex lg:hidden" />
+      </div>
+      <div class="flex flex-col gap-16">
+        <ul class="flex flex-col items-end gap-2">
+          {
+            links.map((link) => (
+              <li>
+                <a class="font-heading heading-3" href={link.href}>
+                  {link.display}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <Socials className="hidden lg:flex" hasBgCircles />
+      </div>
+    </div>
+  </Content>
+</footer>

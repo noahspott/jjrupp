@@ -15,6 +15,10 @@
 }
 
 :focus {
-  outline-color: var(--color-tertiary);
-  outline-offset: 4px;
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-tertiary);
+  outline-offset: 6px;
 }

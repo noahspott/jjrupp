@@ -5,7 +5,7 @@ import "./src/styles/global.css";
 // Components
 import { Seo, Favicon, FontPreloaders, ThemeMeta } from "@/components/common";
 import { PaperBackground } from "@/components/decorative";
-import { Header } from "@/components/layout";
+import { Header, Footer } from "@/components/layout";
 
 // Types
 import type { SeoMeta } from "@/data/seo";
@@ -32,6 +32,7 @@ const { seo } = Astro.props as { seo: SeoMeta };
     <PaperBackground className="fixed" />
     <Header className="" />
     <slot />
+    <Footer />
   </body>
 </html>
 
