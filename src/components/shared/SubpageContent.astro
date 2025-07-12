@@ -14,8 +14,11 @@ const { src, alt = "" } = Astro.props as SubpageContentProps;
 ---
 
 <main class="flex flex-col lg:flex-row">
-  <div class="ms-auto max-w-[860px] lg:flex-1">
-    <slot />
+  <div class="flex lg:flex-1">
+    <div class="hidden lg:block lg:flex-grow"></div>
+    <div class="max-w-[640px]">
+      <slot />
+    </div>
   </div>
   <div
     class="top-0 order-first flex h-80 flex-shrink lg:sticky lg:order-last lg:h-screen lg:flex-1"
