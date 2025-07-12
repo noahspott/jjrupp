@@ -1,16 +1,15 @@
 ---
 // Components
-import Video from "./Video.astro";
-import NewReleaseCard from "./NewReleaseCard.astro";
 import ResponsiveVideo from "./ResponsiveVideo";
+import { Header } from "@/components/layout";
 
-const { className } = Astro.props as { className: string };
+const { className = "" } = Astro.props as { className: string };
 ---
 
-<section class={`relative h-dvh max-h-[760px] w-full ${className}`}>
-  <!-- <Video className="absolute h-full w-full object-cover" /> -->
+<section class={`flex h-dvh w-full flex-col ${className}`}>
+  <Header isSkeleton={true} className="shrink-0 opacity-0" />
   <ResponsiveVideo
-    className="absolute h-full w-full object-cover"
+    className="h-full w-full grow object-cover drop-shadow-2xl"
     client:only
   />
 </section>

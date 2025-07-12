@@ -1,7 +1,7 @@
 ---
 // Components
 import { Section, Content, Link } from "@/components/shared";
-import { EventCard } from "@/components/schedule";
+import { EventList } from "@/components/schedule";
 
 // Data
 import { events } from "@/data/events";
@@ -11,19 +11,11 @@ console.log(events);
 const { className } = Astro.props as { className: string };
 ---
 
-<Section>
+<Section className={className}>
   <Content>
     <div class="flex flex-col gap-16">
       <h2 class="font-heading heading-1 text-primary">Upcoming Shows</h2>
-      <ul class="flex flex-col gap-4">
-        {
-          events.map((event) => (
-            <li>
-              <EventCard event={event} />
-            </li>
-          ))
-        }
-      </ul>
+      <EventList events={events} />
       <Link
         href="/schedule"
         className="self-end"

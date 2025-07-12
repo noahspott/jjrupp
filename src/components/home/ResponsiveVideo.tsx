@@ -1,3 +1,4 @@
+// Lib
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -8,10 +9,10 @@ type ResponsiveVideoProps = {
 
 const getVideoSrc = (): string => {
   const width = window.innerWidth;
-  if (width <= 480) return "/video/hero/hero-10s-360.mp4";
-  if (width <= 640) return "/video/hero/hero-10s-540.mp4";
-  if (width <= 768) return "/video/hero/hero-10s-760.mp4";
-  if (width <= 1440) return "/video/hero/hero-10s-1352.mp4";
+  // if (width <= 480) return "/video/hero/hero-10s-360.mp4";
+  if (width <= 500) return "/video/hero/hero-10s-540.mp4";
+  if (width <= 700) return "/video/hero/hero-10s-760.mp4";
+  if (width <= 1280) return "/video/hero/hero-10s-1352.mp4";
   return "/video/hero/hero-10s-1920.mp4";
 };
 
@@ -34,23 +35,25 @@ export default function ResponsiveVideo({
   }, [src]);
 
   return (
-    <div className={`relative overflow-hidden ${className}`}>
-      <AnimatePresence mode="wait">
-        <motion.video
-          key={src}
-          src={src}
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={poster}
-          className="absolute inset-0 h-full w-full object-cover"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.8 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
-        />
-      </AnimatePresence>
+    <div className={`relative ${className}`}>
+      <div className="absolute inset-0 h-full w-full object-cover p-4 sm:p-4">
+        <AnimatePresence mode="wait">
+          <motion.video
+            key={src}
+            src={src}
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={poster}
+            className="h-full w-full rounded-2xl object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.9 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+          />
+        </AnimatePresence>
+      </div>
     </div>
   );
 }

@@ -62,7 +62,7 @@ export default function Socials({
       {socials.map((social) => (
         <li
           key={social.href}
-          className="bg-secondary h-[50px] w-[50px] rounded-full sm:h-[75px] sm:w-[75px]"
+          className="bg-secondary xs:w-[55px] xs:h-[55px] h-[40px] w-[40px] rounded-full sm:h-[75px] sm:w-[75px]"
         >
           <a
             href={social.href}
@@ -71,7 +71,7 @@ export default function Socials({
           >
             {
               <social.Icon
-                className={clsx("text-primary size-7", iconClassName)}
+                className={clsx("text-primary xs:size-7 size-5", iconClassName)}
               />
             }
           </a>

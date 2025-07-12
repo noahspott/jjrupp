@@ -1,0 +1,19 @@
+---
+// Components
+import EventCard from "./EventCard.astro";
+
+// Types
+import { type EventType } from "./EventCard.astro";
+
+const { events } = Astro.props;
+---
+
+<ul class="flex flex-col gap-4">
+  {
+    events.map((event: EventType) => (
+      <li>
+        <EventCard event={event} />
+      </li>
+    ))
+  }
+</ul>
