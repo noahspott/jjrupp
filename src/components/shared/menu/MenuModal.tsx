@@ -7,7 +7,7 @@ import { links } from "@/data/links";
 export default function MenuModal() {
   return (
     <div className="bg-primary absolute inset-0 z-50 h-screen w-screen">
-      <FaXmark className="text-secondary absolute top-11 right-4 size-6" />
+      <FaXmark className="text-secondary menu-button absolute top-11 right-4 size-6" />
       <div className="relative h-full w-full">
         <nav className="me-8 mt-48 flex flex-col gap-8">
           {links.map((link) => {

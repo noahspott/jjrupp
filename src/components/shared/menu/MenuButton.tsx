@@ -11,7 +11,7 @@ export default function MenuButton() {
   useScrollLock(isOpen);
   return (
     <button onClick={() => setIsOpen((prev) => !prev)}>
-      {isOpen ? <MenuModal /> : <FaBars className="size-6" />}
+      {isOpen ? <MenuModal /> : <FaBars className="menu-button size-6" />}
     </button>
   );
 }

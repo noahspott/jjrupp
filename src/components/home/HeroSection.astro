@@ -1,16 +1,13 @@
 ---
 // Components
-import Video from "./Video.astro";
-import NewReleaseCard from "./NewReleaseCard.astro";
 import ResponsiveVideo from "./ResponsiveVideo";
 
 const { className } = Astro.props as { className: string };
 ---
 
 <section class={`relative h-dvh max-h-[760px] w-full ${className}`}>
-  <!-- <Video className="absolute h-full w-full object-cover" /> -->
   <ResponsiveVideo
-    className="absolute h-full w-full object-cover"
+    className="absolute mx-auto h-full w-full object-cover"
     client:only
   />
 </section>

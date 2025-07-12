@@ -1,3 +1,4 @@
+// Lib
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -8,7 +9,7 @@ type ResponsiveVideoProps = {
 
 const getVideoSrc = (): string => {
   const width = window.innerWidth;
-  if (width <= 480) return "/video/hero/hero-10s-360.mp4";
+  // if (width <= 480) return "/video/hero/hero-10s-360.mp4";
   if (width <= 640) return "/video/hero/hero-10s-540.mp4";
   if (width <= 768) return "/video/hero/hero-10s-760.mp4";
   if (width <= 1440) return "/video/hero/hero-10s-1352.mp4";
@@ -44,13 +45,18 @@ export default function ResponsiveVideo({
           loop
           playsInline
           poster={poster}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full rounded-4xl object-cover p-4"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.8 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
         />
       </AnimatePresence>
+      {/* <img
+        src="/images/noise.png"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover"
+      /> */}
     </div>
   );
 }
