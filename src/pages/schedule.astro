@@ -1,13 +1,24 @@
 ---
 // Components
 import Layout from "../layouts/Layout.astro";
+import { EventList } from "@/components/schedule";
+import { SubpageContent, Section, Content } from "@/components/shared";
+
+// Images
+import backgroundImage from "@/assets/images/artist/jjrupp-on-stage.jpg";
 
 // Data
 import { seo } from "@/data/seo";
+import { events } from "@/data/events";
 ---
 
 <Layout seo={seo.schedule}>
-  <main>
-    <h1 class="font-heading">SCHEDULE</h1>
-  </main>
+  <SubpageContent src={backgroundImage}>
+    <Section>
+      <Content>
+        <h1 class="heading-2 mb-16">Schedule</h1>
+        <EventList events={events} />
+      </Content>
+    </Section>
+  </SubpageContent>
 </Layout>
