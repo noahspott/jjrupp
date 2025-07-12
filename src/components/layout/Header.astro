@@ -10,42 +10,62 @@ import logo from "@/assets/images/logos/jj-logo-secondary.png";
 // Data
 import { links } from "@/data/links";
 
-const { className } = Astro.props as { className: string };
+const { className = "", isSkeleton = false } = Astro.props as {
+  className: string;
+  isSkeleton: boolean;
+};
 ---
 
-<header class={`bg-primary py-4 ${className}`}>
-  <Content>
-    <nav class="text-secondary flex items-center justify-between">
-      <ul class="hidden flex-1 gap-8 lg:flex">
-        {
-          links.map((link) => (
-            <li>
-              <a class="nav-text" href={link.href}>
-                {link.display}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-
-      <div class="flex flex-1 lg:justify-center">
-        <a href="/">
+{
+  // SKELETON
+  isSkeleton ? (
+    <header class={`bg-primary py-4 ${className}`} aria-hidden>
+      <Content>
+        <div class="flex flex-1 lg:justify-center">
           <Image
             class="h-[60px] w-auto self-center md:h-[80px] 2xl:h-[100px]"
             src={logo}
             alt="JJ Rupp Logo"
             loading="eager"
           />
-        </a>
-      </div>
+        </div>
+      </Content>
+    </header>
+  ) : (
+    // HEADER
+    <header class={`bg-primary py-4 ${className}`}>
+      <Content>
+        <nav class="text-secondary flex items-center justify-between">
+          <ul class="hidden flex-1 gap-8 lg:flex">
+            {links.map((link) => (
+              <li>
+                <a class="nav-text" href={link.href}>
+                  {link.display}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-      <div class="hidden flex-1 justify-end md:flex">
-        <Socials />
-      </div>
+          <div class="flex flex-1 lg:justify-center">
+            <a href="/">
+              <Image
+                class="h-[60px] w-auto self-center md:h-[80px] 2xl:h-[100px]"
+                src={logo}
+                alt="JJ Rupp Logo"
+                loading="eager"
+              />
+            </a>
+          </div>
 
-      <div class="flex flex-1 justify-end lg:hidden">
-        <MenuButton client:load />
-      </div>
-    </nav>
-  </Content>
-</header>
+          <div class="hidden flex-1 justify-end md:flex">
+            <Socials />
+          </div>
+
+          <div class="flex flex-1 justify-end lg:hidden">
+            <MenuButton client:load />
+          </div>
+        </nav>
+      </Content>
+    </header>
+  )
+}

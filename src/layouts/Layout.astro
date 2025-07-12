@@ -10,7 +10,10 @@ import { Header, Footer } from "@/components/layout";
 // Types
 import type { SeoMeta } from "@/data/seo";
 
-const { seo } = Astro.props as { seo: SeoMeta };
+const { seo, isAbsolute = false } = Astro.props as {
+  seo: SeoMeta;
+  isAbsolute: boolean;
+};
 ---
 
 <!doctype html>
@@ -30,7 +33,7 @@ const { seo } = Astro.props as { seo: SeoMeta };
   </head>
   <body class="bg-secondary text-primary font-body">
     <PaperBackground className="fixed" />
-    <Header className="" />
+    <Header className={isAbsolute ? "absolute top-0 z-20 w-full" : ""} />
     <slot />
     <Footer />
   </body>
