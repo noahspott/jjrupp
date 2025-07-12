@@ -50,7 +50,7 @@ export default function NewsletterForm({
     >
       <div className="flex flex-col gap-2">
         <label htmlFor="email">Email Address</label>
-        <div className="flex gap-4">
+        <div className="flex flex-col gap-4 sm:flex-row">
           <input
             type="email"
             name="email"
