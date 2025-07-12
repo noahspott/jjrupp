@@ -1,7 +1,6 @@
 ---
 // Components
 import { Image } from "astro:assets";
-import { Section, Content } from "@/components/shared";
 
 // Types
 import type { ImageMetadata } from "astro";
@@ -23,7 +22,9 @@ const { src, alt = "" } = Astro.props as SubpageContentProps;
   <div
     class="top-0 order-first flex h-80 flex-shrink p-4 lg:sticky lg:order-last lg:h-screen lg:flex-1"
   >
-    <div class="bg-primary w-full overflow-clip rounded-2xl lg:h-full">
+    <div
+      class="bg-primary w-full overflow-clip rounded-2xl lg:h-full lg:max-w-[1000px]"
+    >
       <Image
         src={src}
         alt={alt}
