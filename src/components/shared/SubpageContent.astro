@@ -16,7 +16,7 @@ const { src, alt = "" } = Astro.props as SubpageContentProps;
 <main class="flex flex-col lg:flex-row">
   <div class="flex lg:flex-1">
     <div class="hidden lg:block lg:flex-grow"></div>
-    <div class="max-w-[640px]">
+    <div class="w-full max-w-[640px]">
       <slot />
     </div>
   </div>
@@ -28,6 +28,7 @@ const { src, alt = "" } = Astro.props as SubpageContentProps;
         src={src}
         alt={alt}
         class="h-full w-full object-cover opacity-70"
+        loading="eager"
       />
     </div>
   </div>

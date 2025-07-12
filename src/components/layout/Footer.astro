@@ -17,7 +17,13 @@ const { className } = Astro.props as { className?: string };
   <Content>
     <div class="flex flex-col justify-between gap-16 md:flex-row">
       <div class="flex flex-col gap-16">
-        <Image src={logo} alt="JJ Rupp Logo" width={175} />
+        <div>
+          <Image
+            src={logo}
+            alt="JJ Rupp Logo"
+            class="h-[60px] w-auto md:h-[80px]"
+          />
+        </div>
         <NewsletterSection />
         <Socials hasBgCircles className="flex lg:hidden" />
       </div>
