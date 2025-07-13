@@ -33,6 +33,12 @@ export const seo: Record<string, SeoMeta> = {
       "Listen to JJ Rupp's latest music, including the Make You Mine EP and singles like 'Kiss Me' and 'Mexico'. Stream now on all major platforms.",
     url: `${URL}/music`,
   },
+  videos: {
+    title: "Videos | JJ Rupp",
+    description:
+      "Watch official music videos and live performances from JJ Rupp. Explore the visual side of his storytelling and experience the energy that drives his country sound.",
+    url: `${URL}/videos`,
+  },
   about: {
     title: "About JJ Rupp",
     description:

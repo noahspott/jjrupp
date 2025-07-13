@@ -36,7 +36,7 @@ export default function ResponsiveVideo({
 
   return (
     <div className={`relative ${className}`}>
-      <div className="absolute inset-0 h-full w-full object-cover p-4 sm:p-4">
+      <div className="absolute inset-0 h-full w-full object-cover p-4">
         <AnimatePresence mode="wait">
           <motion.video
             key={src}

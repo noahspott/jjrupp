@@ -1,0 +1,45 @@
+---
+// Lin
+import getYouTubeId from "@/lib/getYouTubeId";
+
+// Components
+import YouTube from "react-youtube";
+import Layout from "../layouts/Layout.astro";
+import { SubpageContent, Section, Content } from "@/components/shared";
+import YouTubeVideo from "@/components/video/YouTubeVideo";
+
+// Images
+import backgroundImage from "@/assets/images/artist/jjrupp-guitar.jpg";
+
+// Types
+import type { YouTubeProps } from "react-youtube";
+
+// Data
+import { seo } from "@/data/seo";
+import { releases } from "@/data/releases";
+import { videos } from "@/data/videos";
+---
+
+<Layout seo={seo.videos}>
+  <SubpageContent src={backgroundImage}>
+    <Section>
+      <Content>
+        <h1 class="heading-2 mb-16">Videos</h1>
+        <ul class="grid grid-cols-1 gap-8">
+          {
+            videos.map((video) => {
+              const videoId = getYouTubeId(video.src);
+              if (videoId !== null)
+                return (
+                  <li class="flex flex-col gap-4">
+                    <h2 class="heading-4">{video.name}</h2>
+                    <YouTubeVideo youtubeId={videoId} client:load />
+                  </li>
+                );
+            })
+          }
+        </ul>
+      </Content>
+    </Section>
+  </SubpageContent>
+</Layout>

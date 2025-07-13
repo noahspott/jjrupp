@@ -28,3 +28,29 @@
     @apply hover:cursor-pointer;
   }
 }
+
+@keyframes arrowPulse {
+  0%,
+  100% {
+    color: var(--color-secondary);
+  }
+  50%,
+  90% {
+    color: var(--color-primary);
+  }
+}
+
+.arrow1 {
+  animation: arrowPulse 2s infinite;
+  animation-delay: 0s;
+}
+
+.arrow2 {
+  animation: arrowPulse 2s infinite;
+  animation-delay: 0.25s;
+}
+
+.arrow3 {
+  animation: arrowPulse 2s infinite;
+  animation-delay: 0.5s;
+}
