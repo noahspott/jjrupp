@@ -10,6 +10,9 @@ import logo from "@/assets/images/logos/jj-logo-secondary.png";
 // Data
 import { links } from "@/data/links";
 
+const linksPrimary = links.slice(1, 4);
+const linksSecondary = links.slice(4);
+
 const { className = "", isSkeleton = false } = Astro.props as {
   className: string;
   isSkeleton: boolean;
@@ -36,17 +39,7 @@ const { className = "", isSkeleton = false } = Astro.props as {
     <header class={`bg-primary py-4 ${className}`}>
       <Content>
         <nav class="text-secondary flex items-center justify-between">
-          <ul class="hidden flex-1 gap-8 lg:flex">
-            {links.map((link) => (
-              <li>
-                <a class="nav-text" href={link.href}>
-                  {link.display}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <div class="flex flex-1 lg:justify-center">
+          <div class="flex flex-1">
             <a href="/">
               <Image
                 class="h-[60px] w-auto self-center md:h-[80px] 2xl:h-[100px]"
@@ -57,11 +50,30 @@ const { className = "", isSkeleton = false } = Astro.props as {
             </a>
           </div>
 
-          <div class="hidden flex-1 justify-end md:flex">
-            <Socials />
-          </div>
+          <ul class="hidden flex-1 gap-8 md:flex">
+            {links.map((link) => (
+              <li>
+                <a class="nav-text" href={link.href}>
+                  {link.display}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-          <div class="flex flex-1 justify-end lg:hidden">
+          {/* <div class="hidden flex-1 justify-end md:flex">
+            <Socials />
+          </div> */}
+          {/* <ul class="hidden flex-1 justify-end gap-8 md:flex">
+            {linksSecondary.map((link) => (
+              <li class="list-none">
+                <a class="nav-text" href={link.href}>
+                  {link.display}
+                </a>
+              </li>
+            ))}
+          </ul> */}
+
+          <div class="flex flex-1 justify-end md:hidden">
             <MenuButton client:load />
           </div>
         </nav>

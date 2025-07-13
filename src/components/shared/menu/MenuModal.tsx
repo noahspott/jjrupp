@@ -9,7 +9,7 @@ export default function MenuModal() {
     <div className="bg-primary absolute inset-0 z-50 h-screen w-screen">
       <FaXmark className="text-secondary menu-button absolute top-11 right-4 size-6" />
       <div className="relative h-full w-full">
-        <nav className="me-8 mt-48 flex flex-col gap-8">
+        <nav className="me-8 mt-30 flex flex-col gap-8">
           {links.map((link) => {
             return (
               <li className="list-none">

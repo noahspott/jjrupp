@@ -1,0 +1,22 @@
+---
+// Components
+import Layout from "../layouts/Layout.astro";
+import { SubpageContent, Section, Content } from "@/components/shared";
+
+// Images
+import backgroundImage from "@/assets/images/artist/jjrupp-guitar.jpg";
+
+// Data
+import { seo } from "@/data/seo";
+import { releases } from "@/data/releases";
+---
+
+<Layout seo={seo.contact}>
+  <SubpageContent src={backgroundImage}>
+    <Section>
+      <Content>
+        <h1 class="heading-2 mb-16">Contact</h1>
+      </Content>
+    </Section>
+  </SubpageContent>
+</Layout>

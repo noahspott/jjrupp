@@ -2,14 +2,25 @@
 // Components
 import ResponsiveVideo from "./ResponsiveVideo";
 import { Header } from "@/components/layout";
+import { StreamingIcons } from "@/components/shared";
+import { ScrollArrows } from "@/components/decorative";
 
 const { className = "" } = Astro.props as { className: string };
 ---
 
-<section class={`flex h-dvh w-full flex-col ${className}`}>
+<section class={`relative flex h-dvh w-full flex-col ${className}`}>
   <Header isSkeleton={true} className="shrink-0 opacity-0" />
   <ResponsiveVideo
     className="h-full w-full grow object-cover drop-shadow-2xl"
     client:only
   />
+  <div
+    class="absolute bottom-8 left-1/2 flex w-full max-w-[1280px] -translate-x-1/2 items-end justify-between px-8 2xl:px-0"
+  >
+    <StreamingIcons
+      className="z-30 flex-col justify-center sm:flex-row sm:justify-start"
+      hasBgCircles
+    />
+    <ScrollArrows className="" />
+  </div>
 </section>
