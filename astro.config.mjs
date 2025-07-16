@@ -3,12 +3,10 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
+import sanity from "@sanity/astro";
+import netlify from "@astrojs/netlify";
 import path from "path";
 import { fileURLToPath } from "url";
-
-import sanity from "@sanity/astro";
-
-import netlify from "@astrojs/netlify";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
