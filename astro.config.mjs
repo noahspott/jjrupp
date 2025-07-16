@@ -6,6 +6,8 @@ import sitemap from "@astrojs/sitemap";
 import path from "path";
 import { fileURLToPath } from "url";
 
+import sanity from "@sanity/astro";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -20,5 +22,15 @@ export default defineConfig({
     },
   },
 
-  integrations: [react(), sitemap()],
+  integrations: [
+    react(),
+    sitemap(),
+    sanity({
+      projectId: "do2b3amu",
+      dataset: "production",
+      // Set useCdn to false if you're building statically.
+      useCdn: false,
+      studioBasePath: "/admin",
+    }),
+  ],
 });
