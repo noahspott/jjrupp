@@ -26,7 +26,7 @@ export default function Link({
     <a
       {...rest}
       className={clsx(
-        "font-heading heading-4 transition-colors select-none hover:cursor-pointer",
+        "font-heading heading-4 button-animation transition-colors select-none",
         // BUTTON STYLE
         isButton &&
           (isPrimary

@@ -17,7 +17,7 @@ export default function Button({
     <button
       {...rest}
       className={clsx(
-        "font-heading heading-4 px-6 py-3 select-none hover:cursor-pointer",
+        "font-heading heading-4 button-animation px-6 py-3 select-none",
         variant === "primary" && "bg-primary text-secondary",
         variant === "secondary" && "bg-secondary text-primary",
         className,

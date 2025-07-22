@@ -27,6 +27,10 @@
   .menu-button {
     @apply hover:cursor-pointer;
   }
+
+  .button-animation {
+    @apply hover:scale-[1.02] hover:cursor-pointer active:scale-[0.98];
+  }
 }
 
 @keyframes arrowPulse {
