@@ -9,6 +9,7 @@ import { Header, Footer } from "@/components/layout";
 
 // Types
 import type { SeoMeta } from "@/data/seo";
+import PageTransition from "@/components/layout/PageTransition";
 
 const { seo, isAbsolute = false } = Astro.props as {
   seo: SeoMeta;
@@ -33,6 +34,7 @@ const { seo, isAbsolute = false } = Astro.props as {
   </head>
   <body class="bg-secondary text-primary font-body">
     <PaperBackground className="fixed" />
+    <PageTransition client:load />
     <Header className={isAbsolute ? "absolute top-0 z-20 w-full" : ""} />
     <slot />
     <Footer />
