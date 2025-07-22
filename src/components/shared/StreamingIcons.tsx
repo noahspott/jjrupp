@@ -44,7 +44,7 @@ export default function StreamingIcons({
       {socials.map((social) => (
         <li
           key={social.href}
-          className="bg-secondary/70 h-[55px] w-[55px] rounded-full sm:h-[75px] sm:w-[75px]"
+          className="bg-primary/90 group hover:bg-secondary h-[56px] w-[56px] rounded-full transition-colors duration-300 sm:h-[56px] sm:w-[56px]"
         >
           <a
             href={social.href}
@@ -53,7 +53,10 @@ export default function StreamingIcons({
           >
             {
               <social.Icon
-                className={clsx("text-primary size-7", iconClassName)}
+                className={clsx(
+                  "text-secondary group-hover:text-primary size-5 transition-colors duration-300",
+                  iconClassName,
+                )}
               />
             }
           </a>
