@@ -36,7 +36,7 @@ export default function ResponsiveVideo({
 
   return (
     <div className={`relative ${className}`}>
-      <div className="absolute inset-0 h-full w-full object-cover p-4">
+      <div className="absolute inset-0 h-full w-full object-cover">
         <AnimatePresence mode="wait">
           <motion.video
             key={src}
@@ -46,7 +46,7 @@ export default function ResponsiveVideo({
             loop
             playsInline
             poster={poster}
-            className="h-full w-full rounded-2xl object-cover"
+            className="h-full w-full object-cover"
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.9 }}
             exit={{ opacity: 0 }}
