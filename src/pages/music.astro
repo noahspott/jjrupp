@@ -2,6 +2,7 @@
 // Components
 import Layout from "../layouts/Layout.astro";
 import { SubpageContent, Section, Content } from "@/components/shared";
+import { Image } from "astro:assets";
 
 // Images
 import backgroundImage from "@/assets/images/artist/jjrupp-guitar.jpg";
@@ -16,12 +17,12 @@ import { releases } from "@/data/releases";
     <Section>
       <Content>
         <h1 class="heading-2 mb-16">Music</h1>
-        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <ul class="grid grid-cols-1 gap-8 sm:grid-cols-2">
           {
             releases.map((release, key) => (
               <li>
                 <div class="bg-primary aspect-square">
-                  <img src={release.image.src} alt={release.image.alt} />
+                  <Image src={release.image.src} alt={release.image.alt} />
                 </div>
                 <div>
                   <h2 class="heading-4">{release.name}</h2>

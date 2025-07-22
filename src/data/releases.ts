@@ -1,112 +1,113 @@
-import type { ReleaseType } from "@/types/ReleaseType";
+import image8 from "@/assets/images/release-art/release-8-jj-rupp-world-go-round.jpeg";
+import image7 from "@/assets/images/release-art/release-7-jj-rupp-one-more.jpeg";
+import image6 from "@/assets/images/release-art/release-6-jj-rupp-make-you-mine.jpeg";
+import image5 from "@/assets/images/release-art/release-5-jj-rupp-nobody.jpeg";
+import image4 from "@/assets/images/release-art/release-4-jj-rupp-party-for-the-broken-hearted.jpeg";
+import image3 from "@/assets/images/release-art/release-3-jj-rupp-the-way-you-lie.jpeg";
+import image2 from "@/assets/images/release-art/release-2-jj-rupp-kiss-me.jpeg";
+import image1 from "@/assets/images/release-art/release-1-jj-rupp-have-yourself-a-merry-little-christmas.jpeg";
+import image0 from "@/assets/images/release-art/release-0-jj-rupp-wild-things.jpeg";
+
+export type ReleaseType = {
+  id: number;
+  name: string;
+  image: {
+    src: ImageMetadata;
+    alt: string;
+  };
+  releaseDate: Date;
+  listenLink: string;
+};
 
 export const releases: ReleaseType[] = [
   {
-    name: "Make You Mine",
-    image: {
-      src: "/images/releases/make-you-mine.jpg",
-      alt: "Cover art for Make You Mine",
-    },
-    releaseDate: new Date("2022-06-10"),
-    listenLink: "https://open.spotify.com/album/1abc2def3ghi4jkl5mno6pq",
-  },
-  {
+    id: 8,
     name: "World Go 'Round",
     image: {
-      src: "/images/releases/world-go-round.jpg",
-      alt: "Cover art for World Go 'Round",
+      src: image8,
+      alt: "Cover art for 'World Go 'Round' by JJ Rupp",
     },
-    releaseDate: new Date("2024-07-05"),
-    listenLink: "https://open.spotify.com/track/7xyz8abc9def0ghi1jkl2mn",
+    releaseDate: new Date("2025-05-09"),
+    listenLink: "https://open.spotify.com/track/1QIfiFz0uNpcw5ShbL2AKV",
   },
   {
-    name: "Kiss Me",
+    id: 7,
+    name: "One More",
     image: {
-      src: "/images/releases/kiss-me.jpg",
-      alt: "Cover art for Kiss Me",
+      src: image7,
+      alt: "Cover art for 'One More' by JJ Rupp",
     },
-    releaseDate: new Date("2023-02-14"),
-    listenLink: "https://open.spotify.com/track/3mno4pqr5stu6vwx7yz8ab",
+    releaseDate: new Date("2023-08-23"),
+    listenLink: "https://open.spotify.com/track/3isvZwjZUIXOBNPsrCpn3J",
   },
   {
-    name: "Wild Things",
+    id: 6,
+    name: "Make You Mine",
     image: {
-      src: "/images/releases/wild-things.jpg",
-      alt: "Cover art for Wild Things",
+      src: image6,
+      alt: "Cover art for 'Make You Mine' by JJ Rupp",
     },
-    releaseDate: new Date("2018-09-28"),
-    listenLink: "https://open.spotify.com/album/4ghi5jkl6mno7pqr8stu9vw",
+    releaseDate: new Date("2022-08-12"),
+    listenLink: "https://open.spotify.com/album/06DbwRI8teI2GRGKOEWy6c",
   },
   {
-    name: "Heartland Highway",
+    id: 5,
+    name: "Nobody",
     image: {
-      src: "/images/releases/heartland-highway.jpg",
-      alt: "Cover art for Heartland Highway",
+      src: image5,
+      alt: "Cover art for 'Nobody' by JJ Rupp",
     },
-    releaseDate: new Date("2021-11-19"),
-    listenLink: "https://open.spotify.com/album/9jkl0mno1pqr2stu3vwx4yz",
+    releaseDate: new Date("2022-06-24"),
+    listenLink: "https://open.spotify.com/track/48OwPYBAuOi5T3hWf9VXVP",
   },
   {
-    name: "Cold Nights & Campfires",
+    id: 4,
+    name: "Party for the Broken-Hearted",
     image: {
-      src: "/images/releases/cold-nights.jpg",
-      alt: "Cover art for Cold Nights & Campfires",
+      src: image4,
+      alt: "Cover art for 'Party for the Broken-Hearted' by JJ Rupp",
     },
-    releaseDate: new Date("2023-12-01"),
-    listenLink: "https://open.spotify.com/track/1pqr2stu3vwx4yz5abc6de",
+    releaseDate: new Date("2021-11-05"),
+    listenLink: "https://open.spotify.com/track/6qKFHfTFxm1Vmrf23GDbiV",
   },
   {
-    name: "Backroad Believer",
-    image: {
-      src: "/images/releases/backroad-believer.jpg",
-      alt: "Cover art for Backroad Believer",
-    },
-    releaseDate: new Date("2020-08-08"),
-    listenLink: "https://open.spotify.com/album/6mno7pqr8stu9vw0xyz1ab",
-  },
-  {
-    name: "Small Town Summer",
-    image: {
-      src: "/images/releases/small-town-summer.jpg",
-      alt: "Cover art for Small Town Summer",
-    },
-    releaseDate: new Date("2019-07-04"),
-    listenLink: "https://open.spotify.com/track/2abc3def4ghi5jkl6mno7pq",
-  },
-  {
-    name: "Whiskey Sunsets",
-    image: {
-      src: "/images/releases/whiskey-sunsets.jpg",
-      alt: "Cover art for Whiskey Sunsets",
-    },
-    releaseDate: new Date("2021-03-26"),
-    listenLink: "https://open.spotify.com/track/8stu9vw0xyz1abc2def3gh",
-  },
-  {
+    id: 3,
     name: "The Way You Lie",
     image: {
-      src: "/images/releases/the-way-you-lie.jpg",
-      alt: "Cover art for The Way You Lie",
+      src: image3,
+      alt: "Cover art for 'The Way You Lie' by JJ Rupp",
     },
-    releaseDate: new Date("2022-01-14"),
-    listenLink: "https://open.spotify.com/track/0xyz1abc2def3ghi4jkl5mn",
+    releaseDate: new Date("2021-03-26"),
+    listenLink: "https://open.spotify.com/track/5dU2AChWBEHNvmUHdomGBT",
   },
   {
-    name: "Raised on the Radio",
+    id: 2,
+    name: "Kiss Me",
     image: {
-      src: "/images/releases/raised-on-the-radio.jpg",
-      alt: "Cover art for Raised on the Radio",
+      src: image2,
+      alt: "Cover art for Kiss Me",
     },
-    releaseDate: new Date("2020-05-15"),
-    listenLink: "https://open.spotify.com/album/3def4ghi5jkl6mno7pqr8st",
+    releaseDate: new Date("2020-03-20"),
+    listenLink: "https://open.spotify.com/track/0xQFAA4bDr1W5JozsIm0Xg",
   },
   {
-    name: "Long Drive Home",
+    id: 1,
+    name: "Have Yourself a Merry Little Christmas",
     image: {
-      src: "/images/releases/long-drive-home.jpg",
-      alt: "Cover art for Long Drive Home",
+      src: image1,
+      alt: "Cover art for Have Yourself a Merry Little Christmas",
     },
-    releaseDate: new Date("2019-10-10"),
-    listenLink: "https://open.spotify.com/album/5jkl6mno7pqr8stu9vw0xy",
+    releaseDate: new Date("2019-12-13"),
+    listenLink: "https://open.spotify.com/track/34Yfq5hfUFRYSDMf112GP5",
+  },
+  {
+    id: 0,
+    name: "Wild Things",
+    image: {
+      src: image0,
+      alt: "Cover art for Wild Things",
+    },
+    releaseDate: new Date("2018-10-19"),
+    listenLink: "https://open.spotify.com/album/6VxMRteYSqFfWaYmIadmx9",
   },
 ];

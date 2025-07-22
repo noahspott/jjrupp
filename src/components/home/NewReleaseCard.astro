@@ -3,14 +3,9 @@
 import { Image } from "astro:assets";
 import { Link } from "@/components/shared";
 
-// Images
-import releaseArt from "@/assets/images/release-art/world-go-round-art.jpg";
-
-const release = {
-  name: "World Go 'Round",
-  src: releaseArt,
-  alt: "World Go 'Round Album Art",
-};
+// Data
+import { releases } from "@/data/releases";
+const release = releases[0];
 
 const { className } = Astro.props as { className: string };
 ---
@@ -26,10 +21,10 @@ const { className } = Astro.props as { className: string };
     </h2>
     <Image
       class="aspect-square w-[250px]"
-      src={release.src}
-      alt={release.alt}
+      src={release.image.src}
+      alt={release.image.alt}
     />
     <p class="font-heading heading-4">Available Now</p>
-    <Link>Listen Now</Link>
+    <Link href={release.listenLink}>Listen Now</Link>
   </div>
 </div>
