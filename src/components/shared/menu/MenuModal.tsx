@@ -30,7 +30,7 @@ export default function MenuModal({
         <nav className="me-8 mt-48 flex flex-col items-center gap-8">
           {links.map((link) => {
             return (
-              <li className="list-none">
+              <li className="button-animation list-none hover:opacity-80">
                 <a
                   className="font-heading font-2 text-secondary hover:text-lunar-accent text-right text-4xl uppercase duration-150 hover:cursor-pointer"
                   href={link.href}
