@@ -32,7 +32,7 @@ const { seo, isAbsolute = false } = Astro.props as {
     <!-- Sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
-  <body class="bg-secondary text-primary font-body">
+  <body class="bg-primary text-primary font-body relative">
     <PaperBackground className="fixed" />
     <PageTransition client:load />
     <Header className={isAbsolute ? "absolute top-0 z-20 w-full" : ""} />

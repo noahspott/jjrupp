@@ -9,10 +9,14 @@ const { className } = Astro.props;
 ---
 
 <div class={`h-dvh w-full -z-10 ${className}`}>
-  <Image
-    src={background}
-    class={`object-cover h-full w-full opacity-20`}
-    alt=""
-    loading="eager"
-  />
+  <div class="relative h-full w-full">
+    <div class={`absolute inset-0 bg-secondary`}></div>
+    <Image
+      src={background}
+      class={`object-cover h-full w-full opacity-20`}
+      alt=""
+      loading="eager"
+      widths={[320, 480, 600, 760, 1280, 1920]}
+    />
+  </div>
 </div>
