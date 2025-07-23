@@ -27,7 +27,7 @@ export default function MenuModal({
             aria-label="Close menu"
           />
         </button>
-        <nav className="me-8 mt-48 flex flex-col items-center gap-8">
+        <nav className="flex h-full flex-col items-center justify-center gap-8">
           {links.map((link) => {
             return (
               <li className="button-animation list-none hover:opacity-80">

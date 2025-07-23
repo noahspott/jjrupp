@@ -17,12 +17,16 @@ import { releases } from "@/data/releases";
     <Section>
       <Content>
         <h1 class="heading-2 mb-16">Music</h1>
-        <ul class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <ul class="xs:grid-cols-2 grid grid-cols-1 gap-12">
           {
             releases.map((release, key) => (
-              <li>
-                <div class="bg-primary aspect-square">
-                  <Image src={release.image.src} alt={release.image.alt} />
+              <li class="flex flex-col gap-4">
+                <div class="aspect-square bg-white p-4">
+                  <Image
+                    src={release.image.src}
+                    alt={release.image.alt}
+                    class="aspect-square w-full"
+                  />
                 </div>
                 <div>
                   <h2 class="heading-4">{release.name}</h2>
