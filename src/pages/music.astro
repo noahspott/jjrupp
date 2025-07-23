@@ -20,8 +20,8 @@ import { releases } from "@/data/releases";
         <ul class="xs:grid-cols-2 grid grid-cols-1 gap-12">
           {
             releases.map((release, key) => (
-              <li>
-                <div class="aspect-square bg-white/50 p-4">
+              <li class="flex flex-col gap-4">
+                <div class="aspect-square bg-white p-4">
                   <Image
                     src={release.image.src}
                     alt={release.image.alt}
