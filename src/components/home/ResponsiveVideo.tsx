@@ -10,10 +10,10 @@ type ResponsiveVideoProps = {
 const getVideoSrc = (): string => {
   const width = window.innerWidth;
   // if (width <= 480) return "/video/hero/hero-10s-360.mp4";
-  if (width <= 500) return "/video/hero/hero-10s-540.mp4";
-  if (width <= 700) return "/video/hero/hero-10s-760.mp4";
-  if (width <= 1280) return "/video/hero/hero-10s-1352.mp4";
-  return "/video/hero/hero-10s-1920.mp4";
+  if (width <= 540) return "/video/hero-10s-540.mp4";
+  if (width <= 760) return "/video/hero-10s-760.mp4";
+  if (width <= 1352) return "/video/hero-10s-1352.mp4";
+  return "/video/hero-10s-1920.mp4";
 };
 
 export default function ResponsiveVideo({
