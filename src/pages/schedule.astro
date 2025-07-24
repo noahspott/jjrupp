@@ -9,7 +9,6 @@ import backgroundImage from "@/assets/images/artist/jjrupp-on-stage.jpg";
 
 // Data
 import { seo } from "@/data/seo";
-import { events } from "@/data/events";
 ---
 
 <Layout seo={seo.schedule}>
@@ -17,7 +16,7 @@ import { events } from "@/data/events";
     <Section>
       <Content>
         <h1 class="heading-2 mb-16">Schedule</h1>
-        <EventList events={events} />
+        <EventList client:load />
       </Content>
     </Section>
   </SubpageContent>

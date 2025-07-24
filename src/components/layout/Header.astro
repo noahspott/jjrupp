@@ -22,7 +22,7 @@ const { className = "", isSkeleton = false } = Astro.props as {
 {
   // SKELETON
   isSkeleton ? (
-    <header class={`bg-primary py-4 ${className}`} aria-hidden>
+    <header class={`py-4 ${className}`} aria-hidden>
       <Content>
         <div class="flex flex-1 lg:justify-center">
           <Image
@@ -36,7 +36,7 @@ const { className = "", isSkeleton = false } = Astro.props as {
     </header>
   ) : (
     // HEADER
-    <header class={`bg-primary overflow-hidden py-4 opacity-90 ${className}`}>
+    <header class={`overflow-hidden py-4 ${className}`}>
       <Content>
         <nav class="text-secondary flex items-center justify-between">
           <div class="flex flex-1">
@@ -52,12 +52,12 @@ const { className = "", isSkeleton = false } = Astro.props as {
 
           <ul class="hidden flex-1 gap-8 md:flex">
             {links.map((link) => (
-              <li>
+              <li class="button-animation hover:opacity-80">
                 <a
                   class="nav-text link-light group relative uppercase"
                   href={link.href}
                 >
-                  <span class="bg-secondary absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full" />
+                  {/* <span class="bg-secondary absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full" /> */}
                   {link.display}
                 </a>
               </li>

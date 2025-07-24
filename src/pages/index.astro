@@ -11,7 +11,10 @@ import {
 import { seo } from "@/data/seo";
 ---
 
-<Layout seo={seo.home} isAbsolute={true}>
+<Layout
+  seo={seo.home}
+  headerClassName="absolute top-0 z-20 w-full bg-primary/90"
+>
   <main>
     <HeroSection />
     <NewMusicSection />

@@ -1,2 +1,2 @@
-export { default as EventCard } from "./EventCard.astro";
-export { default as EventList } from "./EventList.astro";
+export { default as EventCard } from "./EventCard";
+export { default as EventList } from "./EventList";
