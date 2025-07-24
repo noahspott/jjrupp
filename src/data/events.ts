@@ -1,31 +1,32 @@
-import type { EventType } from "@/components/schedule/EventCard.astro";
+// Lib
+import { fromZonedTime, toZonedTime } from "date-fns-tz";
+import { differenceInCalendarDays } from "date-fns";
 
-type CreateEventDateInput = {
-  year: number;
-  month: number; // 1 = January, 12 = December
-  day: number;
-  hour?: number; // 24-hour format, default = 0
-  minute?: number; // default = 0
+// Types
+type State = string;
+
+type Address = {
+  street: string;
+  city: string;
+  state: State;
 };
 
-const createEventDate = ({
-  year,
-  month,
-  day,
-  hour = 0,
-  minute = 0,
-}: CreateEventDateInput): Date => {
-  return new Date(Date.UTC(year, month - 1, day, hour, minute));
+type Venue = {
+  name: string;
+  address: Address;
+};
+
+export type EventType = {
+  date: Date;
+  timezone: string;
+  venue: Venue;
 };
 
 export const events: EventType[] = [
-  {
-    date: createEventDate({
-      year: 2025,
-      month: 8,
-      day: 15,
-    }),
-    timezone: "America/New_York",
+  createEvent({
+    year: 2025,
+    month: 8,
+    day: 15,
     venue: {
       name: "Ugly Mug",
       address: {
@@ -34,14 +35,11 @@ export const events: EventType[] = [
         state: "NJ",
       },
     },
-  },
-  {
-    date: createEventDate({
-      year: 2025,
-      month: 8,
-      day: 30,
-    }),
-    timezone: "America/New_York",
+  }),
+  createEvent({
+    year: 2025,
+    month: 8,
+    day: 30,
     venue: {
       name: "Paddy's Green",
       address: {
@@ -50,14 +48,11 @@ export const events: EventType[] = [
         state: "NJ",
       },
     },
-  },
-  {
-    date: createEventDate({
-      year: 2025,
-      month: 9,
-      day: 5,
-    }),
-    timezone: "America/New_York",
+  }),
+  createEvent({
+    year: 2025,
+    month: 9,
+    day: 5,
     venue: {
       name: "Ugly Mug",
       address: {
@@ -66,14 +61,11 @@ export const events: EventType[] = [
         state: "NJ",
       },
     },
-  },
-  {
-    date: createEventDate({
-      year: 2025,
-      month: 10,
-      day: 11,
-    }),
-    timezone: "America/New_York",
+  }),
+  createEvent({
+    year: 2025,
+    month: 10,
+    day: 11,
     venue: {
       name: "Legends Live",
       address: {
@@ -82,14 +74,11 @@ export const events: EventType[] = [
         state: "PA",
       },
     },
-  },
-  {
-    date: createEventDate({
-      year: 2025,
-      month: 12,
-      day: 6,
-    }),
-    timezone: "America/New_York",
+  }),
+  createEvent({
+    year: 2025,
+    month: 12,
+    day: 6,
     venue: {
       name: "Legends Live",
       address: {
@@ -98,5 +87,71 @@ export const events: EventType[] = [
         state: "PA",
       },
     },
-  },
+  }),
 ];
+
+function createEvent({
+  year,
+  month,
+  day,
+  hour = 0,
+  minute = 0,
+  timezone = "America/New_York",
+  venue,
+}: {
+  year: number;
+  month: number;
+  day: number;
+  hour?: number;
+  minute?: number;
+  timezone?: string;
+  venue: {
+    name: string;
+    address: {
+      street: string;
+      city: string;
+      state: string;
+    };
+  };
+}) {
+  return {
+    date: createEventDate({ year, month, day, hour, minute, timezone }),
+    timezone,
+    venue,
+  };
+}
+
+function createEventDate({
+  year,
+  month,
+  day,
+  hour = 0,
+  minute = 0,
+  timezone = "America/New_York",
+}: {
+  year: number;
+  month: number;
+  day: number;
+  hour?: number;
+  minute?: number;
+  timezone?: string;
+}): Date {
+  return fromZonedTime(new Date(year, month - 1, day, hour, minute), timezone);
+}
+
+export function getUpcomingEvents(limit?: number) {
+  const now = new Date();
+
+  const upcoming = events
+    .filter((event: EventType) => {
+      const zonedNow = toZonedTime(now, event.timezone);
+      const zonedEventDate = toZonedTime(event.date, event.timezone);
+      return differenceInCalendarDays(zonedEventDate, zonedNow) >= 0;
+    })
+    .sort((a, b) => a.date.getTime() - b.date.getTime());
+
+  if (limit && limit > 0) {
+    return upcoming.slice(0, limit);
+  }
+  return upcoming;
+}
