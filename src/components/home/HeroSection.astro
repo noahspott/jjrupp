@@ -9,7 +9,7 @@ const { className = "" } = Astro.props as { className: string };
 ---
 
 <section class={`relative flex h-dvh w-full flex-col ${className}`}>
-  <Header isSkeleton={true} className="shrink-0 opacity-0" />
+  <!-- <Header isSkeleton={true} className="shrink-0 opacity-0" /> -->
   <ResponsiveVideo
     className="h-full w-full grow object-cover drop-shadow-2xl"
     client:only

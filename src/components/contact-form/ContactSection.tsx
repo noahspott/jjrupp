@@ -1,33 +1,28 @@
 // Components
-import Content from "../Content";
+import { Content, Section } from "@/components/shared";
 import ContactForm from "./ContactForm";
 import SuccessMessage from "./SuccessMessage";
 import ErrorMessage from "./ErrorMessage";
-import ContactItem from "../ContactItem";
+import ContactItem from "./ContactItem";
 
 // Tools
 import { useState } from "react";
 
 // Types
-import type { FormState } from "@/components/shared/contact-form/types";
+import type { FormState } from "@/components/contact-form/types";
 import { EMAIL, PHONE } from "@/data/business";
 
 export default function ContactSection() {
   const [loadingState, setLoadingState] = useState<FormState>("idle");
   return (
-    <section className="section bg-lunar-white">
+    <Section>
       <Content>
-        <div className="flex flex-col gap-24 lg:flex-row">
+        <div className="flex flex-col gap-24">
           <div className="flex max-w-xl flex-1 flex-col gap-8">
-            <div className="flex flex-col gap-2">
-              <h2 className="heading-kicker font-2 uppercase">Contact Us</h2>
-              <p className="heading-section font-2 text-lunar-primary">
-                Let's Bounce
-              </p>
-            </div>
-            <p className="body-copy">
-              Got questions? Ready to book? We're here to help! Reach out and
-              let's get your party started.
+            <h1 className="heading-2 mb-8">Contact</h1>
+            <p className="body-base">
+              For bookings, licensing opportunities, collaboration proposals, or
+              press requests, please use the form below to get in touch.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:gap-8">
               <ContactItem
@@ -57,6 +52,6 @@ export default function ContactSection() {
           </div>
         </div>
       </Content>
-    </section>
+    </Section>
   );
 }
