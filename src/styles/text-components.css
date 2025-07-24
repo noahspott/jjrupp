@@ -13,7 +13,7 @@
   }
 
   .nav-text {
-    @apply text-sm font-medium uppercase;
+    @apply font-heading text-sm font-medium uppercase;
   }
 
   .body-sm {

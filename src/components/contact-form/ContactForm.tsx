@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 // Components
 import FormInput from "./FormInput";
-import { LinkButton } from "@/components/shared";
+import { Button } from "@/components/shared";
 
 // Types
 import type { Dispatch, SetStateAction } from "react";
@@ -48,32 +48,31 @@ export default function ContactForm({
       name="contact"
       method="POST"
       className={clsx(
-        "bg-gradient-dark body-copy px-8 py-16 shadow-2xl",
+        "bg-primary body-copy text-secondary px-8 py-16 shadow-2xl",
         className,
       )}
       onSubmit={(e) => submitHandler(e)}
     >
       <div className="flex flex-col gap-4">
-        <FormInput label="name" name="name" type="text" />
-        <FormInput label="email" name="email" type="email" />
-        <div className="grid grid-cols-2 gap-4">
-          <FormInput label="phone" name="phone" type="tel" />
-          <FormInput label="rental date" name="date" type="date" />
+        <div className="flex flex-col gap-4 sm:flex-row">
+          <FormInput label="name" name="name" type="text" className="flex-1" />
+          <FormInput label="phone" name="phone" type="tel" className="flex-1" />
         </div>
+        <FormInput label="email" name="email" type="email" />
         <div className="flex flex-col gap-2">
-          <label className="text-lunar-white capitalize" htmlFor="message">
+          <label className="capitalize" htmlFor="message">
             Message
           </label>
           <textarea
             rows={5}
             name="message"
-            className="bg-lunar-white rounded-xs p-2 text-black"
+            className="border-secondary border-2 p-2"
             placeholder="Tell us about your event..."
           />
         </div>
-        <LinkButton type="submit" isButton>
+        <Button variant="secondary" type="submit">
           Submit
-        </LinkButton>
+        </Button>
       </div>
     </form>
   );

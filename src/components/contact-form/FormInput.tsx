@@ -3,20 +3,22 @@ export default function FormInput({
   label,
   name,
   placeholder,
+  className = "",
 }: {
   type: React.HTMLInputTypeAttribute;
   label: string;
   name: string;
   placeholder?: string;
+  className?: string;
 }) {
   return (
-    <div className="flex flex-col gap-2">
-      <label className="text-lunar-white capitalize" htmlFor={name}>
+    <div className={`flex flex-col gap-2 ${className}`}>
+      <label className="capitalize" htmlFor={name}>
         {label}
       </label>
       <input
         name={name}
-        className="bg-lunar-white appearance-none rounded-xs p-2 text-black"
+        className="border-secondary appearance-none border-2 p-2"
         type={type}
         required
       />
