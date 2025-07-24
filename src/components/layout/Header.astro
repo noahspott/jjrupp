@@ -22,7 +22,7 @@ const { className = "", isSkeleton = false } = Astro.props as {
 {
   // SKELETON
   isSkeleton ? (
-    <header class={`bg-primary py-4 ${className}`} aria-hidden>
+    <header class={`py-4 ${className}`} aria-hidden>
       <Content>
         <div class="flex flex-1 lg:justify-center">
           <Image
@@ -36,7 +36,7 @@ const { className = "", isSkeleton = false } = Astro.props as {
     </header>
   ) : (
     // HEADER
-    <header class={`bg-primary overflow-hidden py-4 opacity-90 ${className}`}>
+    <header class={`overflow-hidden py-4 ${className}`}>
       <Content>
         <nav class="text-secondary flex items-center justify-between">
           <div class="flex flex-1">
