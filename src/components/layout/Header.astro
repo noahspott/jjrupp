@@ -52,12 +52,12 @@ const { className = "", isSkeleton = false } = Astro.props as {
 
           <ul class="hidden flex-1 gap-8 md:flex">
             {links.map((link) => (
-              <li>
+              <li class="button-animation hover:opacity-80">
                 <a
                   class="nav-text link-light group relative uppercase"
                   href={link.href}
                 >
-                  <span class="bg-secondary absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full" />
+                  {/* <span class="bg-secondary absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full" /> */}
                   {link.display}
                 </a>
               </li>
