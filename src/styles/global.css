@@ -43,7 +43,7 @@
   }
 
   .button-animation {
-    @apply hover:scale-[1.02] hover:cursor-pointer active:scale-[0.98];
+    @apply hover:scale-[1.02] hover:cursor-pointer active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100 disabled:hover:cursor-not-allowed;
   }
 }
 

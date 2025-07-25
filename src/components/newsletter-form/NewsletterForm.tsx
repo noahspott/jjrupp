@@ -51,13 +51,23 @@ export default function NewsletterForm({
       <div className="flex flex-col gap-2">
         <label htmlFor="email">Email Address</label>
         <div className="flex flex-col gap-4 sm:flex-row">
-          <input
-            id="email"
-            type="email"
-            name="email"
-            className="border-secondary flex-grow border-2 p-2"
-            required
-          />
+          {formState === "idle" && (
+            <input
+              id="email"
+              type="email"
+              name="email"
+              className="border-secondary flex-grow border-2 p-2"
+              required
+            />
+          )}
+
+          {formState === "success" && (
+            <div className="border-tertiary flex flex-grow items-center border-2 p-2">
+              <p className="text-secondary">
+                You've been added the the newsletter!
+              </p>
+            </div>
+          )}
 
           <Button
             type="submit"
