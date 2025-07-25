@@ -23,9 +23,9 @@ import { releases } from "@/data/releases";
               <li class="flex flex-col gap-4">
                 <a
                   href={release.listenLink}
-                  class="group relative aspect-square hover:scale-[1.02]"
+                  class="group relative aspect-square hover:shadow-2xl"
                 >
-                  <div class="from-secondary via-tertiary to-primary absolute inset-0 h-full w-full bg-gradient-to-br opacity-0 group-hover:opacity-95 group-hover:backdrop-blur-3xl" />
+                  <div class="from-secondary via-tertiary to-primary hover:border-secondary absolute inset-0 h-full w-full bg-gradient-to-br opacity-0 group-hover:opacity-95 group-hover:backdrop-blur-3xl hover:border-4" />
                   <Image
                     src={release.image.src}
                     alt={release.image.alt}
