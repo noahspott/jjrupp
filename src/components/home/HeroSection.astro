@@ -24,6 +24,9 @@ const { className = "" } = Astro.props as { className: string };
     src={backgroundImage}
     alt=""
     class="h-full w-full grow object-cover opacity-20"
+    loading={"eager"}
+    widths={[640, 960, 1280, 1536, 1920, 2560, 2880]}
+    sizes="100vw"
   />
   <!-- <ResponsiveVideo
     className="h-full w-full grow object-cover drop-shadow-2xl"
