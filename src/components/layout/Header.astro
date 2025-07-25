@@ -40,19 +40,26 @@ const { className = "", isSkeleton = false } = Astro.props as {
       <Content>
         <nav class="text-secondary flex items-center justify-between">
           <div class="flex flex-1">
-            <a href="/" aria-label="Home page" class="button-animation">
+            <a
+              href="/"
+              aria-label="Home page"
+              class="button-animation select-none"
+            >
               <Image
                 class="h-[60px] w-auto self-center"
                 src={logo}
                 alt="JJ Rupp Logo"
                 loading="eager"
+                widths={[106, 160, 212]}
+                sizes="(max-width: 768px) 106px, 106px"
+                format="webp"
               />
             </a>
           </div>
 
           <ul class="hidden flex-1 gap-8 md:flex">
             {links.map((link) => (
-              <li class="button-animation hover:opacity-80">
+              <li class="button-animation select-none hover:opacity-80">
                 <a
                   class="nav-text link-light group relative uppercase"
                   href={link.href}
