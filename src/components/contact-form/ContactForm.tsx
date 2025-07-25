@@ -68,6 +68,7 @@ export default function ContactForm({
             name="message"
             className="border-primary border-2 bg-white/30 p-2"
             placeholder=""
+            required
           />
         </div>
         <Button variant="primary" type="submit">
