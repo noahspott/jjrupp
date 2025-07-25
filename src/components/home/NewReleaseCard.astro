@@ -11,10 +11,10 @@ const { className } = Astro.props as { className: string };
 ---
 
 <div
-  class={`p-4 bg-white/30 ${className} -rotate-1 shadow-2xl h-fit w-fit m-4`}
+  class={`p-4 bg-secondary ${className} -rotate-1 shadow-2xl h-fit w-fit m-4 relative`}
 >
   <div
-    class="border-primary flex flex-col items-center gap-8 border-2 p-8 text-center"
+    class="border-primary relative z-10 flex flex-col items-center gap-8 border-2 p-8 text-center"
   >
     <h2 class="heading-2 font-heading">
       {release.name}
@@ -32,4 +32,5 @@ const { className } = Astro.props as { className: string };
       aria-label="Listen to the latest JJ Rupp release">Listen Now</Link
     >
   </div>
+  <div class="absolute inset-0 h-full w-full bg-white/30"></div>
 </div>
