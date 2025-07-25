@@ -4,7 +4,7 @@ import "@/styles/global.css";
 
 // Components
 import { Seo, Favicon, FontPreloaders, ThemeMeta } from "@/components/common";
-import { PaperBackground } from "@/components/decorative";
+import { BackgroundTexture } from "@/components/decorative";
 import { Header, Footer } from "@/components/layout";
 
 // Types
@@ -33,7 +33,7 @@ const { seo, headerClassName = "bg-primary" } = Astro.props as {
     <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body class="bg-primary text-primary font-body relative">
-    <PaperBackground className="fixed" />
+    <BackgroundTexture className="fixed" />
     <PageTransition client:load />
     <Header className={headerClassName} />
     <slot />
