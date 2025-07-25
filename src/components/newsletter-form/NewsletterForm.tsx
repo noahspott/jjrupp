@@ -24,7 +24,7 @@ export default function NewsletterForm({
     const formData = new FormData(event.target as HTMLFormElement);
 
     try {
-      fetch("/__forms.html", {
+      fetch("/__newsletter.html", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -43,7 +43,7 @@ export default function NewsletterForm({
     <form
       data-netlify="true"
       netlify-honeypot="true"
-      name="contact"
+      name="newsletter"
       method="POST"
       className={clsx("", className)}
       onSubmit={(e) => submitHandler(e)}
@@ -52,9 +52,11 @@ export default function NewsletterForm({
         <label htmlFor="email">Email Address</label>
         <div className="flex flex-col gap-4 sm:flex-row">
           <input
+            id="email"
             type="email"
             name="email"
             className="border-secondary flex-grow border-2 p-2"
+            required
           />
 
           <Button
