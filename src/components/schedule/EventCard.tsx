@@ -18,7 +18,7 @@ export default function EventCard({ event }: EventCardProps) {
           <span>{formatInTimeZone(event.date, event.timezone, "yyyy")}</span>
         </time>
         <div className="flex flex-col gap-1 sm:gap-2">
-          <address className="body-xl">
+          <address className="body-xl not-italic">
             {event.venue.address.city}, {event.venue.address.state}
           </address>
           <h3 className="body-base">{event.venue.name}</h3>
