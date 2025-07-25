@@ -3,7 +3,13 @@
 import "@/styles/global.css";
 
 // Components
-import { Seo, Favicon, FontPreloaders, ThemeMeta } from "@/components/common";
+import {
+  Seo,
+  Favicon,
+  FontPreloaders,
+  ThemeMeta,
+  OpenGraph,
+} from "@/components/common";
 import { BackgroundTexture } from "@/components/decorative";
 import { Header, Footer } from "@/components/layout";
 
@@ -22,6 +28,7 @@ const { seo, headerClassName = "bg-primary" } = Astro.props as {
   <head>
     <Seo {...seo} />
     <Favicon />
+    <OpenGraph />
     <FontPreloaders />
     <ThemeMeta color={`#1e0f09`} />
 
