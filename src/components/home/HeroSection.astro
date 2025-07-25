@@ -16,6 +16,10 @@ const { className = "" } = Astro.props as { className: string };
   class={`relative flex h-dvh w-full flex-col overflow-hidden ${className}`}
 >
   <Header isSkeleton={true} className="shrink-0 opacity-0" />
+  <div
+    class="from-secondary via-tertiary to-primary absolute h-full w-full bg-gradient-to-br"
+  >
+  </div>
   <Image
     src={backgroundImage}
     alt=""
