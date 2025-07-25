@@ -11,7 +11,7 @@ const { className } = Astro.props as { className: string };
 ---
 
 <div
-  class={`p-4 bg-secondary ${className} -rotate-1 shadow-2xl h-fit w-fit m-4`}
+  class={`p-4 bg-white/30 ${className} -rotate-1 shadow-2xl h-fit w-fit m-4`}
 >
   <div
     class="border-primary flex flex-col items-center gap-8 border-2 p-8 text-center"
@@ -23,8 +23,13 @@ const { className } = Astro.props as { className: string };
       class="aspect-square w-[250px]"
       src={release.image.src}
       alt={release.image.alt}
+      width={300}
+      loading={"lazy"}
     />
     <p class="font-heading heading-4">Available Now</p>
-    <Link href={release.listenLink}>Listen Now</Link>
+    <Link
+      href={release.listenLink}
+      aria-label="Listen to the latest JJ Rupp release">Listen Now</Link
+    >
   </div>
 </div>
