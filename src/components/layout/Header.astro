@@ -22,7 +22,7 @@ const { className = "", isSkeleton = false } = Astro.props as {
 {
   // SKELETON
   isSkeleton ? (
-    <header class={`py-4 ${className}`} aria-hidden>
+    <header class={`py-4 ${className}`} aria-hidden={true}>
       <Content>
         <div class="flex flex-1 lg:justify-center">
           <Image
