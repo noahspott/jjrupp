@@ -25,12 +25,7 @@ const { className = "", isSkeleton = false } = Astro.props as {
     <header class={`py-4 ${className}`} aria-hidden={true}>
       <Content>
         <div class="flex flex-1 lg:justify-center">
-          <Image
-            class="h-[60px] w-auto self-center"
-            src={logo}
-            alt="JJ Rupp Logo"
-            loading="eager"
-          />
+          <div class="h-[60px] w-auto self-center" />
         </div>
       </Content>
     </header>
