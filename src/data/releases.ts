@@ -29,7 +29,7 @@ export const releases: ReleaseType[] = [
       alt: "Cover art for 'Cold Hard Man' by JJ Rupp",
     },
     releaseDate: new Date("2025-07-24"),
-    listenLink: "https://open.spotify.com/track/1QIfiFz0uNpcw5ShbL2AKV",
+    listenLink: "https://open.spotify.com/track/0OGRdrHSGAqGLOmpL1nMxA",
   },
   {
     id: 8,
