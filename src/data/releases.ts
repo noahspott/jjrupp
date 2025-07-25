@@ -1,3 +1,4 @@
+import image9 from "@/assets/images/release-art/release-9-jj-rupp-cold-hard-man.jpeg";
 import image8 from "@/assets/images/release-art/release-8-jj-rupp-world-go-round.jpeg";
 import image7 from "@/assets/images/release-art/release-7-jj-rupp-one-more.jpeg";
 import image6 from "@/assets/images/release-art/release-6-jj-rupp-make-you-mine.jpeg";
@@ -20,6 +21,16 @@ export type ReleaseType = {
 };
 
 export const releases: ReleaseType[] = [
+  {
+    id: 9,
+    name: "Cold Hard Man",
+    image: {
+      src: image9,
+      alt: "Cover art for 'Cold Hard Man' by JJ Rupp",
+    },
+    releaseDate: new Date("2025-07-24"),
+    listenLink: "https://open.spotify.com/track/1QIfiFz0uNpcw5ShbL2AKV",
+  },
   {
     id: 8,
     name: "World Go 'Round",

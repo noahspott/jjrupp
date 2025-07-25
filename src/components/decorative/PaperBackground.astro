@@ -3,7 +3,7 @@
 import { Image } from "astro:assets";
 
 // Images
-import background from "@/assets/images/background.jpg";
+import background from "@/assets/images/textures/texture-4.jpg";
 
 const { className } = Astro.props;
 ---
@@ -11,14 +11,15 @@ const { className } = Astro.props;
 <div class={`h-dvh w-full -z-10 ${className}`}>
   <div class="relative h-full w-full">
     <div class={`absolute inset-0 bg-secondary`}></div>
-    <!-- <Image
+    <Image
       src={background}
-      class="h-full w-full object-cover opacity-20"
+      class="h-full w-full object-cover opacity-5"
       alt=""
       loading="eager"
-      widths={[640, 960, 1280, 1920, 2560, 3840]}
-      sizes="400vw"
       format="webp"
-    /> -->
+      widths={[1280, 1920, 2560, 3840, 5120]}
+      sizes="100vw"
+      quality={90}
+    />
   </div>
 </div>

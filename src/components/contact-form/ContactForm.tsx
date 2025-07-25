@@ -48,29 +48,29 @@ export default function ContactForm({
       name="contact"
       method="POST"
       className={clsx(
-        "bg-primary body-copy text-secondary px-8 py-16 shadow-2xl",
+        "body-copy text-primary bg-white/30 p-4 shadow-2xl",
         className,
       )}
       onSubmit={(e) => submitHandler(e)}
     >
-      <div className="flex flex-col gap-4">
+      <div className="border-primary flex flex-col gap-8 border-2 p-8">
         <div className="flex flex-col gap-4 sm:flex-row">
           <FormInput label="name" name="name" type="text" className="flex-1" />
           <FormInput label="phone" name="phone" type="tel" className="flex-1" />
         </div>
         <FormInput label="email" name="email" type="email" />
         <div className="flex flex-col gap-2">
-          <label className="capitalize" htmlFor="message">
+          <label className="font-heading capitalize" htmlFor="message">
             Message
           </label>
           <textarea
             rows={5}
             name="message"
-            className="border-secondary border-2 p-2"
-            placeholder="Tell us about your event..."
+            className="border-primary border-2 bg-white/30 p-2"
+            placeholder=""
           />
         </div>
-        <Button variant="secondary" type="submit">
+        <Button variant="primary" type="submit">
           Submit
         </Button>
       </div>

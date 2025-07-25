@@ -22,7 +22,7 @@ const { className = "", isSkeleton = false } = Astro.props as {
 {
   // SKELETON
   isSkeleton ? (
-    <header class={`py-4 ${className}`} aria-hidden>
+    <header class={`py-4 ${className}`} aria-hidden={true}>
       <Content>
         <div class="flex flex-1 lg:justify-center">
           <Image
@@ -40,7 +40,7 @@ const { className = "", isSkeleton = false } = Astro.props as {
       <Content>
         <nav class="text-secondary flex items-center justify-between">
           <div class="flex flex-1">
-            <a href="/" class="button-animation">
+            <a href="/" aria-label="Home page" class="button-animation">
               <Image
                 class="h-[60px] w-auto self-center"
                 src={logo}

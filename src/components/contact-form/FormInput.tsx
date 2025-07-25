@@ -13,12 +13,12 @@ export default function FormInput({
 }) {
   return (
     <div className={`flex flex-col gap-2 ${className}`}>
-      <label className="capitalize" htmlFor={name}>
+      <label className="font-heading capitalize" htmlFor={name}>
         {label}
       </label>
       <input
         name={name}
-        className="border-secondary appearance-none border-2 p-2"
+        className="border-primary appearance-none border-2 bg-white/30 p-2"
         type={type}
         required
       />

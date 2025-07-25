@@ -20,16 +20,19 @@ const { src, alt = "" } = Astro.props as SubpageContentProps;
     </div>
   </div>
   <div
-    class="top-0 order-first flex h-80 flex-shrink p-4 lg:sticky lg:order-last lg:h-screen lg:flex-1"
+    class="top-0 order-first flex h-80 flex-shrink p-4 lg:sticky lg:order-last lg:h-screen lg:flex-1 lg:p-0 lg:ps-4"
   >
     <div
-      class="bg-primary w-full overflow-clip rounded-2xl lg:h-full lg:max-w-[1000px]"
+      class="from-secondary via-tertiary to-primary rounded-website relative w-full overflow-clip bg-gradient-to-br shadow-xl lg:h-full lg:max-w-[1000px] lg:rounded-none"
     >
+      <!-- <div class="absolute inset-0 h-full w-full"></div> -->
       <Image
         src={src}
         alt={alt}
-        class="h-full w-full object-cover opacity-70"
+        class="h-full w-full object-cover opacity-60"
         loading="eager"
+        widths={[320, 480, 640, 768, 960, 1280, 1536, 1920]}
+        sizes="(min-width: 1024px) 50vw, 100vw"
       />
     </div>
   </div>

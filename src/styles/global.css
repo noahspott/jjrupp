@@ -9,9 +9,23 @@
   --font-heading: "Notable", "sans";
   --font-body: "DM Sans", "sans";
 
-  --color-primary: #27130c;
-  --color-secondary: #e7dfb9;
-  --color-tertiary: #a56a41;
+  --radius-website: 12px;
+
+  /* --color-primary-desaturated: #22110b;
+  --color-secondary-desaturated: #dcd6b0;
+  --color-tertiary-desaturated: #8f5e3a; */
+
+  --color-primary-desaturated: #1e0f09; /* Deeper, less saturated brown-black */
+  --color-secondary-desaturated: #cfc9a1; /* Softer beige, less yellow */
+  --color-tertiary-desaturated: #7c4f32; /* Earthy brown, less red/orange */
+
+  --color-primary-original: #27130c;
+  --color-secondary-original: #e7dfb9;
+  --color-tertiary-original: #a56a41;
+
+  --color-primary: var(--color-primary-desaturated);
+  --color-secondary: var(--color-secondary-desaturated);
+  --color-tertiary: var(--color-tertiary-desaturated);
 }
 
 :focus {

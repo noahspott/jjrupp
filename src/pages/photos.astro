@@ -10,8 +10,9 @@ import image1 from "@/assets/images/gallery/jj-1.jpg";
 import image2 from "@/assets/images/gallery/jj-2.jpg";
 import image3 from "@/assets/images/gallery/jj-3.jpg";
 import image4 from "@/assets/images/gallery/jj-4.jpg";
+import image5 from "@/assets/images/gallery/jj-5.jpg";
 
-const images = [image0, image1, image2, image3, image4];
+const images = [image0, image1, image2, image3, image4, image5];
 
 // Data
 import { seo } from "@/data/seo";
@@ -26,7 +27,13 @@ import { seo } from "@/data/seo";
           {
             images.map((image, key) => (
               <li class="aspect-square">
-                <Image src={image} class="h-full w-full object-cover" alt="" />
+                <Image
+                  src={image}
+                  class="h-full w-full object-cover"
+                  alt=""
+                  widths={[320, 480, 640, 768, 960, 1280]}
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                />
               </li>
             ))
           }
