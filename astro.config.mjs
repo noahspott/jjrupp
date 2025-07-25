@@ -11,6 +11,7 @@ const __dirname = path.dirname(__filename);
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://jjrupp.com",
   vite: {
     plugins: [tailwindcss()],
     resolve: {

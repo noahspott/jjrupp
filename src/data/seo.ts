@@ -51,4 +51,9 @@ export const seo: Record<string, SeoMeta> = {
       "Explore behind-the-scenes moments, tour shots, and promotional photos of JJ Rupp.",
     url: `${URL}/photos`,
   },
+  notFound: {
+    title: "404 Not Found | JJ Rupp",
+    description: "404 Not Found",
+    url: `${URL}/404`,
+  },
 };

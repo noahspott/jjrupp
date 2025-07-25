@@ -1,3 +1,55 @@
 ---
-return Astro.redirect("/");
+// Components
+import Layout from "../layouts/Layout.astro";
+import { SubpageContent, Section, Content } from "@/components/shared";
+
+// Images
+import backgroundImage from "@/assets/images/subpage/404/jj-rupp-guitar-bw-2.png";
+import Image from "astro/components/Image.astro";
+
+// Data
+import { seo } from "@/data/seo";
+import { releases } from "@/data/releases";
+
+const release = releases[0];
 ---
+
+<Layout seo={seo.notFound}>
+  <SubpageContent src={backgroundImage}>
+    <Section>
+      <Content>
+        <h1 class="heading-2 mb-16">Page Not Found</h1>
+        <p class="body-xl mb-16">
+          You stumbled on a page that doesn't exist. Go check out JJ's latest
+          release.
+        </p>
+        <div class="max-w-[320px]">
+          <a
+            href={release.listenLink}
+            class="group relative aspect-square transition-all duration-300 select-none hover:shadow-2xl"
+            aria-label={`Listen to ${release.name}`}
+          >
+            <div
+              class="from-secondary via-tertiary to-primary hover:border-secondary absolute inset-0 h-full w-full bg-gradient-to-br opacity-0 transition-colors duration-300 group-hover:opacity-95 group-hover:backdrop-blur-3xl hover:border-4"
+            >
+            </div>
+            <Image
+              src={release.image.src}
+              alt={release.image.alt}
+              class="aspect-square w-full"
+            />
+            <p
+              class="text-secondary font-heading absolute right-2 bottom-2 opacity-0 transition-all duration-300 group-hover:opacity-100"
+            >
+              Listen Now
+            </p>
+          </a>
+          <div>
+            <h2 class="heading-4">{release.name}</h2>
+            <p class="body-base">{release.releaseDate.getFullYear()}</p>
+          </div>
+        </div>
+      </Content>
+    </Section>
+  </SubpageContent>
+</Layout>
