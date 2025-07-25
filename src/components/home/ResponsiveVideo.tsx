@@ -42,7 +42,7 @@ export default function ResponsiveVideo({
             key={src}
             src={src}
             autoPlay
-            muted
+            muted={true}
             loop
             playsInline
             poster={poster}
