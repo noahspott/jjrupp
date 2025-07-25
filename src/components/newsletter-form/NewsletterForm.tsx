@@ -63,6 +63,7 @@ export default function NewsletterForm({
             type="submit"
             disabled={formState !== "idle"}
             variant="secondary"
+            aria-label="Sign up for newsletter"
           >
             {formState === "submitting" ? "Submitting" : "Submit"}
           </Button>
