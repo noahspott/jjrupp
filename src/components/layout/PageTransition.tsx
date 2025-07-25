@@ -38,7 +38,7 @@ export default function PageTurnTransition() {
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <img
-        src="/images/jj-logo-circle-450px.png"
+        src="/images/jj-logo-circle-450px.webp"
         className="w-[300px]"
         alt=""
         loading="eager"
