@@ -34,7 +34,7 @@ const { className } = Astro.props as { className?: string };
         <ul class="xs:items-end flex flex-col items-center gap-2">
           {
             links.map((link) => (
-              <li class="button-animation hover:opacity-80">
+              <li class="button-animation select-none hover:opacity-80">
                 <a class="font-heading heading-3" href={link.href}>
                   {link.display}
                 </a>
